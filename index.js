@@ -7,15 +7,15 @@ app.on("ready", () => {
     titleBarStyle: 'hidden',
     movable: true,
     trafficLightPosition: {
-      x: 17,
-      y: 32,
+      x: 15,
+      y: 15,
     },
-    minHeight: 450,
-    minWidth: 500,
+    minWidth: 1200,
+    minHeight: 900,
     width: 1200,
     height: 900,
   });
   process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
-  mainWindow.loadFile(path.join(__dirname, "public/index.html"));
+  mainWindow.loadFile(path.join(__dirname, "public/index.html")).then(r => {}).catch(e => { console.log(e) });
   //mainWindow.webContents.openDevTools();
 });

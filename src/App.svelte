@@ -8,7 +8,7 @@
 		const entries = get(pairs);
 		for (let i = 0; i < entries.length; i++) {
 			if (entries[i].key === key) {
-				alert('A pair with the key ' + key + ' already exists');
+				alert("A pears with the key '" + key + "' already exists");
 				return;
 			}
 		}
@@ -30,9 +30,11 @@
 </script>
 
 <main>
+	<br />
 	<div align="center">
 		<img src = "PearsTitle.png" alt="" draggable="false" width = 600 height = 200/>
-	<p>A simple app to remember key-value pairs</p>
+	<p class = "subtitle">An app for remembering Key-Value Pears</p>
+		<br />
 		<br />
 		<br />
 	</div>
@@ -44,13 +46,19 @@
 				<th>Value</th>
 				<th>Tags</th>
 			</tr>
+			<br />
 			{#each get(pairs) as pair}
 				<tr>
 					<td>{pair.key}</td>
 					<td>{pair.value}</td>
-					<td>{pair.tags}</td>
+					<td>
+						{#each pair.tags as tag}
+							#{tag},
+						{/each}
+					</td>
 				</tr>
 			{/each}
+
 			<tr>
 				<td>
 					<input type="text" id="key" placeholder="key" />
@@ -73,6 +81,11 @@
 
 <style>
 
+	@font-face {
+		font-family: "Aileron-Thin";
+		src: url("../Aileron-Thin.ttf") format("truetype");
+	}
+
 	:global(body) {
 		background-color: #343B42;
 		color: white;
@@ -86,6 +99,12 @@
 		margin: 0 auto;
 	}
 
+	.subtitle {
+		font-family: "Aileron-Thin", serif;
+		font-size: 1.5em;
+		margin-top: -15px;
+	}
+
 	h1 {
 		color: rgb(125, 217, 139);
 		text-transform: uppercase;
@@ -95,13 +114,17 @@
 
 	input {
 		width: 100%;
-		padding: 0.5em;
+		padding: 0.7em;
 		border: none;
 		border-bottom: 1px solid white;
 		background-color: transparent;
 		color: white;
 		font-size: 1.2em;
 		font-weight: 100;
+	}
+
+	button {
+		margin: 10px;
 	}
 
 	@media (min-width: 640px) {

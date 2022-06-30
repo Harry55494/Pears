@@ -1,11 +1,11 @@
 <div align="center">
     <br />
-    <img src="public/PearsTitleTransparent.png" alt="Pears Icon" width="400" height="133">
+    <img src="public/PearsTitleTransparent.png" alt="Pears Icon" width="600" height="200">
 </div>
 
 ## About
 
-Pears is an electron and svelte based single-page application that stores key-value pairs for remembering things.
+Pears is an Electron and Svelte based single-page application that stores key-value pears for remembering things.
 
 ## Features (Upcoming)
 
